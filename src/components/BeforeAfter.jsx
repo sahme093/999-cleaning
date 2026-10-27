@@ -13,16 +13,31 @@ const label = {
 export default function BeforeAfter() {
   const [pos, setPos] = useState(50);
 
+  if (BIZ.gallery?.length) {
+    return (
+      <section style={{ padding: "24px 16px 8px" }}>
+        <h3 style={{ margin: "0 0 12px" }}>Our work</h3>
+        <div className="gallery">
+          {BIZ.gallery.map((g) => (
+            <figure key={g.src}>
+              <img src={g.src} alt={g.alt} loading="lazy" />
+              {g.caption && <figcaption>{g.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section style={{ padding: "24px 16px 8px" }}>
       <h3 style={{ margin: "0 0 4px" }}>Before &amp; after</h3>
       <p className="muted" style={{ margin: "0 0 12px", fontSize: 13 }}>Drag the slider to compare.</p>
       <div style={{ position: "relative", height: 260, border: "2px solid var(--color-text)", overflow: "hidden" }}>
-        <div className="grayscale" style={{ position: "absolute", inset: 0 }}>
+        <div style={{ position: "absolute", inset: 0 }}>
           <Photo src={BIZ.photos.after} alt="After cleaning" placeholder="[After photo]" />
         </div>
         <div
-          className="grayscale"
           style={{ position: "absolute", inset: 0, clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         >
           <Photo src={BIZ.photos.before} alt="Before cleaning" placeholder="[Before photo — same angle]" />
@@ -34,7 +49,7 @@ export default function BeforeAfter() {
             bottom: 0,
             left: `${pos}%`,
             width: 2,
-            background: "var(--color-accent)",
+            background: "var(--color-orange)",
             pointerEvents: "none",
           }}
         />

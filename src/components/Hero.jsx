@@ -22,8 +22,8 @@ export default function Hero() {
           gap: 16,
         }}
       >
-        <span className="eyebrow">{BIZ.area}</span>
-        <h1 style={{ fontSize: 48, lineHeight: 0.98, letterSpacing: "-0.035em", color: "var(--color-bg)" }}>
+        <span className="eyebrow" style={{ color: "var(--color-orange)", fontWeight: 700 }}>{BIZ.area}</span>
+        <h1 style={{ fontSize: 42, lineHeight: 1.05, letterSpacing: "-0.03em", color: "var(--color-bg)" }}>
           {BIZ.tagline}
         </h1>
         {badges.length > 0 && (
@@ -47,17 +47,14 @@ export default function Hero() {
                   fontWeight: 600,
                 }}
               >
-                <span aria-hidden="true">✓</span>
+                <span aria-hidden="true" style={{ color: "var(--color-orange)" }}>✓</span>
                 <span style={{ fontSize: 15 }}>{title}</span>
               </li>
             ))}
           </ul>
         )}
       </section>
-      <div
-        className="grayscale"
-        style={{ height: 240, position: "relative", borderBottom: "2px solid var(--color-divider)" }}
-      >
+      <div style={{ height: 260, position: "relative", borderBottom: "4px solid var(--color-orange)" }}>
         <Photo src={BIZ.photos.hero} alt="A clean, bright room" placeholder="[Hero photo — a clean, bright room]" />
       </div>
     </>

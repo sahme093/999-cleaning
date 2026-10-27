@@ -26,7 +26,7 @@ export default function Reviews() {
             fontWeight: "var(--font-heading-weight)",
             fontSize: 60,
             lineHeight: 0.6,
-            color: "var(--color-accent)",
+            color: "var(--color-orange)",
             height: 28,
           }}
         >
@@ -63,9 +63,10 @@ export default function Reviews() {
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0" }}>
         <span style={{ fontSize: 13 }}>
-          <span style={{ color: "var(--color-accent)" }}>★★★★★</span> {BIZ.rating} from {BIZ.reviewCount} reviews
+          <span style={{ color: "var(--color-orange)" }}>★★★★★</span>{" "}
+          {BIZ.rating ? `${BIZ.rating} from ${BIZ.reviewCount} reviews` : "Reviews from Google"}
         </span>
-        <a href={BIZ.googleUrl} style={{ fontSize: 13, fontWeight: 600 }}>On Google</a>
+        {BIZ.googleUrl && <a href={BIZ.googleUrl} style={{ fontSize: 13, fontWeight: 600 }}>On Google</a>}
       </div>
     </section>
   );
