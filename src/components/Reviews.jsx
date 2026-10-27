@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BIZ } from "../config.js";
+import { YelpIcon } from "./Icons.jsx";
 
 export default function Reviews() {
   const [i, setI] = useState(0);
@@ -68,9 +69,17 @@ export default function Reviews() {
         </span>
         <span style={{ display: "flex", gap: 14 }}>
           {BIZ.googleUrl && <a href={BIZ.googleUrl} style={{ fontSize: 13, fontWeight: 600 }}>On Google</a>}
-          {BIZ.yelpUrl && <a href={BIZ.yelpUrl} target="_blank" rel="noopener" style={{ fontSize: 13, fontWeight: 600 }}>See us on Yelp</a>}
         </span>
       </div>
+      {BIZ.yelpUrl && (
+        <a href={BIZ.yelpUrl} target="_blank" rel="noopener" className="btn btn-secondary btn-wide" style={{ display: "flex", marginTop: 4 }}>
+          <span style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <YelpIcon size={20} />
+            See us on Yelp
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
+      )}
     </section>
   );
 }
