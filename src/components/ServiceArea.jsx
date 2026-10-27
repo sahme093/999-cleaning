@@ -46,6 +46,12 @@ export default function ServiceArea() {
       )}
       <p className="muted" style={{ fontSize: 12, margin: "24px 0 0" }}>
         {BIZ.name} · {BIZ.phone} · {BIZ.hours}
+        {BIZ.yelpUrl && (
+          <>
+            {" · "}
+            <a href={BIZ.yelpUrl} target="_blank" rel="noopener">Yelp</a>
+          </>
+        )}
       </p>
     </section>
   );

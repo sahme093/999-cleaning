@@ -66,7 +66,10 @@ export default function Reviews() {
           <span style={{ color: "var(--color-orange)" }}>★★★★★</span>{" "}
           {BIZ.rating ? `${BIZ.rating} from ${BIZ.reviewCount} reviews` : "Reviews from Google"}
         </span>
-        {BIZ.googleUrl && <a href={BIZ.googleUrl} style={{ fontSize: 13, fontWeight: 600 }}>On Google</a>}
+        <span style={{ display: "flex", gap: 14 }}>
+          {BIZ.googleUrl && <a href={BIZ.googleUrl} style={{ fontSize: 13, fontWeight: 600 }}>On Google</a>}
+          {BIZ.yelpUrl && <a href={BIZ.yelpUrl} target="_blank" rel="noopener" style={{ fontSize: 13, fontWeight: 600 }}>See us on Yelp</a>}
+        </span>
       </div>
     </section>
   );

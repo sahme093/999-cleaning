@@ -40,6 +40,7 @@ export const BIZ = {
   rating: "", // e.g. "5.0", shown next to the stars when set
   reviewCount: "",
   googleUrl: "", // link to the Google Business profile
+  yelpUrl: "https://www.yelp.com/biz/999-cleaning-menifee",
   services: [
     { name: "Standard cleaning", short: "Regular upkeep for your home" },
     { name: "Deep clean", short: "First visit or full reset" },
